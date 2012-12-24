@@ -5,7 +5,9 @@ var server = http.createServer(function(request, response){
 	var t = new Date();
 	var pathname = url.parse(request.url).pathname;
     var realPath = '.'+pathname;
-
+    if(realPath.length<=2){
+        realPath = './index.html';
+    }
     fs.exists(realPath, function (exists) {
         if (!exists) {
             response.writeHead(404, {
@@ -23,11 +25,11 @@ var server = http.createServer(function(request, response){
 
                     response.end(err);
                 } else {
-				    if(request.url.indexOf('.js')!=-1){
+				    if(realPath.indexOf('.js')!=-1){
 				    	response.writeHead(200, {'Content-Type': 'text/javascript'});
-				    }else if(request.url.indexOf('.css')!=-1){
+				    }else if(realPath.indexOf('.css')!=-1){
 				    	response.writeHead(200, {'Content-Type': 'text/css'});
-					}else if (request.url.indexOf('.html')!=-1) {
+					}else if (realPath.indexOf('.html')!=-1) {
 				    	response.writeHead(200, {'Content-Type': 'text/html'});
 				    }else{
 				    	response.writeHead(200, {'Content-Type': 'text/plain'});
@@ -39,7 +41,7 @@ var server = http.createServer(function(request, response){
         }
     });
 
-    console.log('['+t+']'+request.url);
+    console.log('['+t+']'+pathname);
 }); 
 server.listen(8080);
 console.log("server start up at http://localhost:8080\n");
