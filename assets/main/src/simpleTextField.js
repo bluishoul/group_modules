@@ -4,7 +4,8 @@ define(function(require,exports,module){
 	var tpl = require('./tpl');
 	var html = require('./tpl/simpleTextField.tpl');
 	var data = {
-		defalt_textarea_value:'simpleTextField'
+		default_textarea_value:'simpleTextField',
+		defaul_submit_name:'msg'
 	};
 	var SimpleTextFiled = function(selector,opt){
 		selector.html(tpl(html,data));
