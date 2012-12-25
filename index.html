@@ -17,10 +17,16 @@
     preload: ['seajs/plugin-text']
   })
 
-  seajs.use(['jquery','./assets/main/src/main'],function($,group){
+  seajs.use(['jquery','./assets/main/src/main'],function(j,group){
+    $ = jQuery = j;
     $(function(){
       var stf = new group.stf($('#simple_text_field_test'),{
-        emotion:true
+        emotion:true,
+        image_insert_action:'http://group.oschina.net/action/tweet/insert_img',
+        video_insert_action:'http://group.oschina.net/action/tweet/insert_video',
+        user_id:89964,
+        on_image_insert_success:function(){},
+        on_video_insert_success:function(){}
       });
     });
   });

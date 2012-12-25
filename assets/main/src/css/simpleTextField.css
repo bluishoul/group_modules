@@ -32,7 +32,14 @@ li.stf_import_video a{
 	background: url('../img/simpleTextField/video.png') no-repeat left center;
 }
 
+.stf_popup_wrapper{background-color: #EEE;position: absolute;z-index: 9999;margin: 5px 0 0 0;}
 .stf_popup_wrapper,.stf_popups li{display: none;}
+
+.stf_popups_close{float:right;}
+
+.stf_popups li{width:400px;}
+
+.stf_popups_content,.stf_popups_title{margin: 5px 5px 0 5px;font-size: 12px;}
 
 .stf_emotion_popup_img{
 	float:left;
@@ -41,3 +48,5 @@ li.stf_import_video a{
 	margin: 0 2px 4px 0;
 	background: url('../img/simpleTextField/qq.gif') no-repeat;
 }
+
+.stf_popup_wrapper .line{margin: 0 0 10px 0;}
