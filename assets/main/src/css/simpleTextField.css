@@ -12,9 +12,32 @@ ul.stf_resources{
 ul.stf_resources li{
 	display: inline-block;
 	float: left;
-	padding-right: 10px;
+	margin-right: 5px;
 	font-size: 12px;
+}
+ul.stf_resources li a{
+	text-decoration: none;
+	padding: 1px 2px 1px 18px;
 }
 input.stf_submit{
 	float: right;
+}
+li.stf_import_face a{
+	background: url('../img/simpleTextField/emotion.gif') no-repeat left center;
+}
+li.stf_import_image a{
+	background: url('../img/simpleTextField/img.gif') no-repeat left center;
+}
+li.stf_import_video a{
+	background: url('../img/simpleTextField/video.png') no-repeat left center;
+}
+
+.stf_popup_wrapper,.stf_popups li{display: none;}
+
+.stf_emotion_popup_img{
+	float:left;
+	width: 24px;
+	height: 24px;
+	margin: 0 2px 4px 0;
+	background: url('../img/simpleTextField/qq.gif') no-repeat;
 }

@@ -31,9 +31,12 @@ var server = http.createServer(function(request, response){
 				    	response.writeHead(200, {'Content-Type': 'text/css'});
 					}else if (realPath.indexOf('.html')!=-1) {
 				    	response.writeHead(200, {'Content-Type': 'text/html'});
+				    }else if(/\.jpg|\.png|\.jpeg|\.gif/.test(realPath)){
+                        var ext = realPath.substring(realPath.lastIndexOf('.')+1);
+				    	response.writeHead(200, {'Content-Type': 'image/'+ext});
 				    }else{
-				    	response.writeHead(200, {'Content-Type': 'text/plain'});
-				    };
+                        response.writeHead(200, {'Content-Type': 'image/plain'});
+                    };
 					response.write(file, "binary");
 					response.end();
                 }
